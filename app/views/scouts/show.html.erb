@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @scout.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @scout.date %>
+</p>
+
+<p>
+  <b>Offer:</b>
+  <%= @scout.offer %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @scout.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_scout_path(@scout) %> |
+<%= link_to 'Back', scouts_path %>
