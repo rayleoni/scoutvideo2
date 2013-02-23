@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @scout.name %>
-</p>
+<center>
+</br>
+<h1><%= @scout.name %> 
 
-<p>
-  <b>Date:</b>
-  <%= @scout.date %>
-</p>
-
-<p>
-  <b>Offer:</b>
-  <%= @scout.offer %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @scout.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_scout_path(@scout) %> |
+  <h1> <%= @scout.date %> </h1>
+<h1>  <%= @scout.offer %> </h1>
+</center>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<center><h4> Share this url: </br><%=url_for(:only_path => false).gsub("http://", "") %></br>
+	</br> We'll notify you when the other person records a video. </h4></center>
+</br></br></br>
+<%= link_to 'Edit', edit_scout_path(@scout) %> 
 <%= link_to 'Back', scouts_path %>
