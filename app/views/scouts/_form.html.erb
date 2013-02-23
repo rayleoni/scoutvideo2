@@ -13,19 +13,14 @@
 
 // Global variables to hold the players' references.
 var _Nimbb1;
-var _Nimbb2;
 
 // Event: Nimbb Player has been initialized and is ready.
 function Nimbb_initCompleted(idPlayer)
 {
-  // Let's see which player is calling the event and get references to the players.
   switch(idPlayer)
   {
     case "nimbb1":
       _Nimbb1 = document[idPlayer];
-      break;
-    case "nimbb2":
-      _Nimbb2 = document[idPlayer];
       break;
   }
 }
@@ -84,7 +79,7 @@ function Nimbb_videoSaved(idPlayer)
 <h4> Why can you be trusted? Show the person that you're awesome. Maybe mention: </h4>
 <ul> <li> why you're interested </li> <li> your track record </li> </ul>
   <div class="actions">
-</br>
+</br> </br>
 <object id="nimbb1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="320" height="240" codebase= "http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
 <param name="movie" value="http://player.nimbb.com/nimbb.swf?mode=record&key=9e101308bc&simplepage=1&lang=en" />
 <param name="allowScriptAccess" value="always" />
