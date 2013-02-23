@@ -1,3 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ScoutVideo</title>
+<link rel="icon" type="image/ico" href="favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="main.css"/>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// Global variables to hold the players' references.
+var _Nimbb1;
+var _Nimbb2;
+
+// Event: Nimbb Player has been initialized and is ready.
+function Nimbb_initCompleted(idPlayer)
+{
+  // Let's see which player is calling the event and get references to the players.
+  switch(idPlayer)
+  {
+    case "nimbb1":
+      _Nimbb1 = document[idPlayer];
+      break;
+    case "nimbb2":
+      _Nimbb2 = document[idPlayer];
+      break;
+  }
+}
+
+// Event: the video was saved.
+function Nimbb_videoSaved(idPlayer)
+{
+  var guid;
+	
+  // Make sure that the first player is generating this event.
+  if( idPlayer == "nimbb1" )
+  {
+    // Get the GUID of the saved video.
+    guid = _Nimbb1.getGuid();
+	_Nimbb1.setMode('view'); 			
+
+  }
+
+}
+
+
+// -->
+</script>
+
 <p id="notice"><%= notice %></p>
 
 <center>
@@ -7,9 +59,19 @@
   <h1> <%= @scout.date %> </h1>
 <h1>  <%= @scout.offer %> </h1>
 </center>
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br>
+You </br></br>
+<object id="nimbb1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="320" height="240" codebase= "http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+<param name="movie" value="http://player.nimbb.com/nimbb.swf?mode=record&key=9e101308bc&simplepage=1&lang=en" />
+<param name="allowScriptAccess" value="always" />
+<embed name="nimbb1" src="http://player.nimbb.com/nimbb.swf?mode=record&key=9e101308bc&simplepage=1&lang=en" width="320" height="240" allowScriptAccess="always" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash">
+</embed>
+</object>
+</br></br></br></br></br></br></br></br>
 <center><h4> Share this url: </br><%=url_for(:only_path => false).gsub("http://", "") %></br>
 	</br> We'll notify you when the other person records a video. </h4></center>
 </br></br></br>
 <%= link_to 'Edit', edit_scout_path(@scout) %> 
 <%= link_to 'Back', scouts_path %>
+
+
